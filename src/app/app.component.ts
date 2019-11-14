@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 
+import { UsersService } from './modules/core/services/users/users.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent {
-  title = 'thales-test';
+
+  constructor(private usersService: UsersService) {
+    this.usersService.getUsersList(5000).subscribe(console.log);
+  }
+
 }
