@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     CommonModule,
     MaterialModule,
-    HttpClientModule
   ],
 })
 export class SharedModule { }
