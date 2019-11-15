@@ -10,7 +10,7 @@ import { UsersService } from './modules/core/services/users/users.service';
 export class AppComponent {
 
   constructor(private usersService: UsersService) {
-    this.usersService.getUsersList(5000).subscribe(console.log);
+    this.usersService.getUsersList(1).subscribe(console.log);
   }
 
 }
