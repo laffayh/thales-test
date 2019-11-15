@@ -5,11 +5,6 @@ import { UsersMainComponent } from './modules/users/pages/users-main/users-main.
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'users',
-    pathMatch: 'full',
-  },
-  {
     path: 'users',
     component: UsersMainComponent,
   },

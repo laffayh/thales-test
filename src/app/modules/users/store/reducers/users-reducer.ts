@@ -10,7 +10,13 @@ export interface UsersState extends EntityState<User> {
   usersLoaded: boolean;
 }
 
-export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
+export function selectUserId(user: User): string {
+  return user.id.value;
+}
+
+export const adapter: EntityAdapter<User> = createEntityAdapter<User>({
+  selectId: selectUserId,
+});
 
 export const initialState: UsersState = adapter.getInitialState({
   usersLoaded: false,
@@ -22,7 +28,7 @@ const reducer = createReducer(
     loadUsersSuccess,
     (state, { users }) => adapter.addAll(users, {
       ...state,
-      userLoaded: true,
+      usersLoaded: true,
     })
   ),
 );

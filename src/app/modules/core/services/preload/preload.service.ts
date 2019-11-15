@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { filter, delay } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { loadUsers } from 'src/app/modules/users/store/actions/users-actions';
 import { getUsersLoaded } from 'src/app/modules/users/store/selectors/users-selectors';
 
@@ -19,8 +19,8 @@ export class PreloadService {
     this.store.dispatch(loadUsers({ count: 3 }));
     return this.store.pipe(
       select(getUsersLoaded),
-      delay(6000),
-      filter(loaded => !loaded),
+      filter(loaded => loaded),
+      tap(console.log),
     ).toPromise();
   }
 }
