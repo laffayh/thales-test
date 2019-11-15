@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { User } from 'src/app/models/user/user.model';
+
+import { AppState } from '../../store/reducers';
 
 @Component({
   selector: 'app-users-list',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  users: Array<User>;
+
+  constructor(private readonly store: Store<AppState>) { }
 
   ngOnInit() {
   }

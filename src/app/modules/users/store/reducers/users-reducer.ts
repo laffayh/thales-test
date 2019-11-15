@@ -14,8 +14,13 @@ export function selectUserId(user: User): string {
   return user.id.value;
 }
 
+export function sortByName(a: User, b: User): number {
+  return a.name.first.localeCompare(b.name.first);
+}
+
 export const adapter: EntityAdapter<User> = createEntityAdapter<User>({
   selectId: selectUserId,
+  sortComparer: sortByName,
 });
 
 export const initialState: UsersState = adapter.getInitialState({

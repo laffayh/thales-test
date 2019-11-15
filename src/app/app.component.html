@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<div class="nav-container">
+
+  <mat-toolbar color="primary">
+    <h1>Thales test</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <app-users-list [users]="users$ | async"></app-users-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="container-fluid pt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

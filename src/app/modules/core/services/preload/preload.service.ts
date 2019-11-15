@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { filter, tap } from 'rxjs/operators';
+import { filter, delay } from 'rxjs/operators';
 import { loadUsers } from 'src/app/modules/users/store/actions/users-actions';
 import { getUsersLoaded } from 'src/app/modules/users/store/selectors/users-selectors';
 
@@ -15,12 +15,14 @@ export class PreloadService {
     private readonly store: Store<AppState>,
   ) { }
 
-  async load(): Promise<any> {
-    this.store.dispatch(loadUsers({ count: 3 }));
-    return this.store.pipe(
-      select(getUsersLoaded),
-      filter(loaded => loaded),
-      tap(console.log),
-    ).toPromise();
+  async load(): Promise<boolean> {
+    this.store.dispatch(loadUsers({ count: 30 }));
+
+    return new Promise(resolve => {
+      this.store.pipe(
+        select(getUsersLoaded),
+        filter(loaded => loaded),
+      ).subscribe(resolve);
+    });
   }
 }
