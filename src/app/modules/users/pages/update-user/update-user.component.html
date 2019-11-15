@@ -1,3 +1,15 @@
-<p>
-  update-user works!
-</p>
+<ng-container *ngIf="user$ | async as user; else noUser">
+    <mat-tab-group>
+        <mat-tab label="Mettre à jour un utilisateur">
+          <app-user-form [user]="user"></app-user-form>
+        </mat-tab>
+        <mat-tab label="Position de l'utilisateur">
+          <app-user-map [user]="user"></app-user-map>
+        </mat-tab>
+      </mat-tab-group>
+</ng-container>
+<ng-template #noUser>
+  <p>Séléctionnez un utilisateur</p>
+</ng-template>
+
+

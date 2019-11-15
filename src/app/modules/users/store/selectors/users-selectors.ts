@@ -14,3 +14,8 @@ export const getAllUsers = createSelector(
   getUsersState,
   fromUsers.selectAll,
 );
+
+export const getUserById = (id: string) => createSelector(
+  getUsersState,
+  state => state.entities[ id ],
+);
