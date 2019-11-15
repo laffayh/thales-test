@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { UsersService } from './modules/core/services/users/users.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,8 +7,7 @@ import { UsersService } from './modules/core/services/users/users.service';
 })
 export class AppComponent {
 
-  constructor(private usersService: UsersService) {
-    this.usersService.getUsersList(3).subscribe(console.log);
+  constructor() {
   }
 
 }

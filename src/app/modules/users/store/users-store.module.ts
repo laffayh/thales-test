@@ -8,7 +8,7 @@ import * as fromUsersReducer from './reducers/users-reducer';
 @NgModule({
   imports: [
     StoreModule.forFeature(fromUsersReducer.usersFeatureKey, fromUsersReducer.usersReducer),
-    EffectsModule.forFeature([ UsersEffects ]),
+    EffectsModule.forRoot([ UsersEffects ]),
   ],
 })
 export class UsersStoreModule { }

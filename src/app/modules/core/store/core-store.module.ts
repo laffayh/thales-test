@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 import { UsersStoreModule } from '../../users/store/users-store.module';
 import { metaReducers, reducers } from './reducers';
@@ -14,6 +16,7 @@ import { metaReducers, reducers } from './reducers';
       }
     }),
     UsersStoreModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ]
 })
 export class CoreStoreModule { }

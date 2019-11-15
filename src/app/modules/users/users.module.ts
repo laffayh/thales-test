@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UsersComponent } from './users.component';
+
+import { SharedModule } from '../shared/shared.module';
+import { UsersMainComponent } from './pages/users-main/users-main.component';
 
 @NgModule({
-  imports: [
-    CommonModule
+  declarations: [
+    UsersMainComponent
   ],
-  declarations: [UsersComponent]
+  imports: [
+    SharedModule,
+  ],
 })
 export class UsersModule { }
