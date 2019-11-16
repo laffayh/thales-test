@@ -10,6 +10,11 @@ const routes: Routes = [
     component: UsersMainComponent,
     children: [
       {
+        path: '',
+        redirectTo: '1',
+        pathMatch: 'full',
+      },
+      {
         path: ':id',
         component: UpdateUserComponent,
       },

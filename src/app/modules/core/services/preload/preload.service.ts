@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { filter } from 'rxjs/operators';
+import { CONST } from 'src/app/config/const';
 import { loadUsers } from 'src/app/modules/users/store/actions/users-actions';
 import { getUsersLoaded } from 'src/app/modules/users/store/selectors/users-selectors';
 
 import { AppState } from '../../store/reducers';
-import { CONST } from 'src/app/config/const';
 
 @Injectable({
   providedIn: 'root'

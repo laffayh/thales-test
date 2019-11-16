@@ -1,12 +1,17 @@
-<mat-form-field appearance="outline">
-  <mat-label>Rechercher</mat-label>
-  <input matInput [formControl]="searchInput" placeholder="Nom ou prénom">
-  <mat-icon *ngIf="!!searchInput.value.length" (click)="emptySearchInput()" class="pointer" matSuffix>close</mat-icon>
-  <mat-hint>{{ users.length }} / {{ totalCount }}</mat-hint>
-</mat-form-field>
+<div class="head">
+  <h2>Utilisateurs</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rechercher</mat-label>
+    <input matInput [formControl]="searchInput" placeholder="Nom ou prénom">
+    <mat-icon *ngIf="!!searchInput.value.length" (click)="emptySearchInput()" class="pointer" matSuffix>close</mat-icon>
+    <mat-hint>{{ users.length }} / {{ totalCount }}</mat-hint>
+  </mat-form-field>
+</div>
 
 <mat-list role="list">
-  <mat-list-item class="pointer" *ngFor="let user of users" role="listitem" routerLinkActive="active" [routerLink]="[ 'users',  user.id.value ]">
+  <mat-list-item class="pointer" *ngFor="let user of users" role="listitem" routerLinkActive="active"
+    [routerLink]="[ 'users',  user.id.value ]">
     {{ user.name.first }} {{ user.name.last }}
   </mat-list-item>
 </mat-list>

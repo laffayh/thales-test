@@ -5,6 +5,6 @@ export const CONST = {
   MAP: {
     ZOOM: 4,
   },
-  USERS_COUNT: 50,
+  USERS_COUNT: 500,
   SNACK_BAR_DURATION: 4000,
 };

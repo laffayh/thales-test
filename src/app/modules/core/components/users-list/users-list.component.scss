@@ -2,12 +2,12 @@ mat-list-item:hover{
   background-color: rgba(200, 200, 200, 0.8);
 }
 
-mat-form-field {
-  padding: 10px;
+.head{
   top: 0;
   position: sticky;
   background: white;
   z-index: 1;
+  padding: 10px;
 }
 
 .active{
