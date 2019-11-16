@@ -16,3 +16,7 @@ mat-sidenav{
 mat-sidenav-container {
   flex: 1;
 }
+
+.is-mobile mat-sidenav-container {
+  flex: 1 0 auto;
+}

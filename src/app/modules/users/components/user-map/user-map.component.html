@@ -1,5 +1,8 @@
 <div class="d-flex justify-content-center">
-  <google-map [center]="marker.position" [zoom]="zoom">
+  <google-map [height]="!!mobileQuery.matches ? '300px' : '500px'" 
+              [width]="!!mobileQuery.matches ? '300px' : '500px'"
+              [center]="marker.position" 
+              [zoom]="zoom">
     <map-marker [position]="marker.position" [title]="marker.title"></map-marker>
   </google-map>
 </div>

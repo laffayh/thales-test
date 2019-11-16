@@ -5,3 +5,10 @@ mat-form-field{
 button {
   float: right;
 }
+
+@media (max-width: 600px) { 
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 0.5em 0; 
+   }
+ }

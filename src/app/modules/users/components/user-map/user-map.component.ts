@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { CONST } from 'src/app/config/const';
 import { Marker } from 'src/app/models/map/marker.model';
 import { User } from 'src/app/models/user/user.model';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-user-map',
@@ -15,12 +16,15 @@ export class UserMapComponent implements OnInit, OnChanges {
 
   marker: Marker;
 
+  mobileQuery: MediaQueryList;
+
   zoom: number;
 
-  constructor() { }
+  constructor(private readonly media: MediaMatcher) { }
 
   ngOnInit() {
     this.zoom = CONST.MAP.ZOOM;
+    this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
   }
 
   ngOnChanges(changes: SimpleChanges) {

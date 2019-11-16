@@ -1,11 +1,12 @@
-<div class="nav-container">
+<div class="nav-container" [class.is-mobile]="mobileQuery.matches">
 
   <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1>Thales test</h1>
   </mat-toolbar>
 
   <mat-sidenav-container>
-    <mat-sidenav mode="side" opened>
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" opened>
       <app-users-list [users]="users$ | async" (searched)="onSearched($event)"></app-users-list>
     </mat-sidenav>
 

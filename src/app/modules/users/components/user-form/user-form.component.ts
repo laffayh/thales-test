@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user/user.model';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: [ './user-form.component.scss' ]
+  styleUrls: [ './user-form.component.scss' ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class UserFormComponent implements OnChanges {
 
