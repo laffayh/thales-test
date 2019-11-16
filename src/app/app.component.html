@@ -6,7 +6,7 @@
 
   <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
-      <app-users-list [users]="users$ | async"></app-users-list>
+      <app-users-list [users]="users$ | async" (searched)="onSearched($event)"></app-users-list>
     </mat-sidenav>
 
     <mat-sidenav-content>

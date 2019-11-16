@@ -2,7 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 import { User } from 'src/app/models/user/user.model';
 
-import { loadUsersSuccess, UsersActionsUnion } from '../actions/users-actions';
+import { loadUsersSuccess, updateUser, UsersActionsUnion } from '../actions/users-actions';
 
 export const usersFeatureKey = 'users';
 
@@ -35,6 +35,10 @@ const reducer = createReducer(
       ...state,
       usersLoaded: true,
     })
+  ),
+  on(
+    updateUser,
+    (state, { user }) => adapter.upsertOne(user, { ...state })
   ),
 );
 

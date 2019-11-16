@@ -1,5 +1,5 @@
-<p>
-  user-map works!
-</p>
-
-<pre>{{ user | json }}</pre>
+<div class="d-flex justify-content-center">
+  <google-map [center]="marker.position">
+    <map-marker [position]="marker.position" [title]="marker.title"></map-marker>
+  </google-map>
+</div>

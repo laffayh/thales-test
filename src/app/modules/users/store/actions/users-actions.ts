@@ -15,10 +15,16 @@ export const loadUsersSuccess = createAction(
   props<{ users: Array<User> }>()
 );
 
+export const updateUser = createAction(
+  '[Users] Update User',
+  props<{ user: User }>()
+);
+
 const usersActions = union({
   loadUsers,
   loadUsersError,
   loadUsersSuccess,
+  updateUser,
 });
 
 export type UsersActionsUnion = typeof usersActions;

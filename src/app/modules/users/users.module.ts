@@ -6,6 +6,7 @@ import { UserMapComponent } from './components/user-map/user-map.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { UsersMainComponent } from './pages/users-main/users-main.component';
 import { UsersRoutingModule } from './users-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

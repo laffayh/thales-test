@@ -19,3 +19,11 @@ export const getUserById = (id: string) => createSelector(
   getUsersState,
   state => state.entities[ id ],
 );
+
+export const getUserBySearchTerm = (searchTerm: string) => createSelector(
+  getAllUsers,
+  users => users.filter(user => {
+    const searchStr = searchTerm.toLowerCase().trim();
+    return user.name.first.toLowerCase().startsWith(searchStr) || user.name.last.toLowerCase().startsWith(searchStr);
+  })
+);

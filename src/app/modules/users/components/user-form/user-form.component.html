@@ -1,5 +1,44 @@
-<p>
-  user-form works!
-</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmitUserForm()">
 
-<pre>{{ user | json }}</pre>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Prénom</mat-label>
+          <input type="text" matInput formControlName="first" placeholder="Modifier le prénom">
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Nom</mat-label>
+          <input type="text" matInput formControlName="last" placeholder="Modifier le nom">
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Latitude</mat-label>
+          <input type="text" matInput formControlName="latitude" placeholder="Modifier la latitude">
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Longitude</mat-label>
+          <input type="text" matInput formControlName="longitude" placeholder="Modifier la longitude">
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Valider</button>
+  </div>
+
+
+</form>
