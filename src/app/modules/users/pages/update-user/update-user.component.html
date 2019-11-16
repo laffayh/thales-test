@@ -1,7 +1,7 @@
 <ng-container *ngIf="user$ | async as user; else noUser">
 
   <div class="d-flex justify-content-start align-items-end user-profile">
-    <img [src]="user.picture.large" alt="profile">
+    <img [src]="!!mobileQuery.matches ? user.picture.medium : user.picture.large" alt="profile">
     <h1>{{ user.name.first }} {{ user.name.last }}</h1>
   </div>
 

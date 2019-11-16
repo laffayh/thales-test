@@ -6,7 +6,6 @@ import { User } from 'src/app/models/user/user.model';
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: [ './user-form.component.scss' ],
-  encapsulation: ViewEncapsulation.None,
 })
 export class UserFormComponent implements OnChanges {
 

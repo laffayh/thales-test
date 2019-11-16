@@ -8,6 +8,7 @@ import { AppState } from 'src/app/modules/core/store/reducers';
 
 import { updateUser } from '../../store/actions/users-actions';
 import { getUserById } from '../../store/selectors/users-selectors';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-update-user',
@@ -17,14 +18,18 @@ import { getUserById } from '../../store/selectors/users-selectors';
 })
 export class UpdateUserComponent implements OnInit {
 
+  mobileQuery: MediaQueryList;
+
   user$: Observable<User>;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
+    private readonly media: MediaMatcher,
     private readonly store: Store<AppState>,
   ) { }
 
   ngOnInit() {
+    this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
     this.user$ = this.activatedRoute.params.pipe(
       switchMap(({ id }) => this.store.select(getUserById(id))),
     );
