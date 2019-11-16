@@ -6,7 +6,7 @@
 </mat-form-field>
 
 <mat-list role="list">
-  <mat-list-item class="pointer" *ngFor="let user of users" role="listitem" [routerLink]="[ 'users',  user.id.value ]">
+  <mat-list-item class="pointer" *ngFor="let user of users" role="listitem" routerLinkActive="active" [routerLink]="[ 'users',  user.id.value ]">
     {{ user.name.first }} {{ user.name.last }}
   </mat-list-item>
 </mat-list>
