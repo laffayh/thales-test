@@ -6,10 +6,10 @@
   </div>
 
   <mat-tab-group>
-    <mat-tab label="Mettre à jour un utilisateur">
+    <mat-tab label="Modifier">
       <app-user-form [user]="user" (userUpdated)="onUserUpdated($event)"></app-user-form>
     </mat-tab>
-    <mat-tab label="Position de l'utilisateur">
+    <mat-tab label="Carte">
       <app-user-map [user]="user"></app-user-map>
     </mat-tab>
   </mat-tab-group>
