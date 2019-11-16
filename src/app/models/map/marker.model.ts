@@ -1,6 +1,5 @@
 interface Label {
   color: string;
-  text: string;
 }
 
 interface Position {

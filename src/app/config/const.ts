@@ -2,5 +2,8 @@ export const CONST = {
   API: {
     URL: 'https://randomuser.me/api/',
   },
-  USERS_COUNT: 10,
+  MAP: {
+    ZOOM: 4,
+  },
+  USERS_COUNT: 5000,
 };
